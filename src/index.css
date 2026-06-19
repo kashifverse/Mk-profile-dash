@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-mono-data: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-surface: #0D0D0D;
+  --color-surface-container: #141414;
+  --color-surface-container-low: #181c16;
+  --color-surface-container-lowest: #050505;
+  --color-surface-container-high: #1E1D1B;
+  --color-surface-container-highest: #2B2A27;
+  --color-on-surface: #E8E2D6;
+  --color-on-surface-variant: #C4BDB1;
+  --color-outline: #857F74;
+  --color-outline-variant: rgba(197, 160, 89, 0.15);
+  
+  --color-primary: #C5A059;
+  --color-on-primary: #0D0D0D;
+  --color-primary-container: #332813;
+  --color-[#bdc2ff]: #C5A059;
+  --color-[rgba(124,135,243,0.3)]: rgba(197, 160, 89, 0.3);
+  --color-[rgba(124,135,243,0.25)]: rgba(197, 160, 89, 0.25);
+  
+  --color-secondary: #B59E75;
+  --color-secondary-container: #262117;
+  --color-[#cabff9]: #B59E75;
+  --color-[#553b70]: #2A2318;
+  --color-[#c7a9e6]: #DCD3C1;
+  --color-[#ffb4ab]: #E97474;
+  --color-[#7c87f3]: #C5A059;
+  
+  --color-tertiary: #DCD3C1;
+  
+  --animate-spin-slow: spin 45s linear infinite;
+  --animate-ping-slow: ping 6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@utility glass-card {
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(13, 13, 13, 0.8);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(197, 160, 89, 0.3);
+    border-radius: 10px;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility animate-slide-left {
+  animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
